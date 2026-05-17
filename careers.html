@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Dashboard | CareerPath CSE</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">CareerPath CSE</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="internships.html">Internships</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    </div>
+  </nav>
+
+  <!-- ================= DASHBOARD ================= -->
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">Your <span>Recommended Career Dashboard</span></h1>
+
+      <div class="dashboard">
+
+        <!-- LEFT MAIN CARD -->
+        <div class="glass-card">
+          <h2 id="careerTitle">Analyzing...</h2>
+          <p id="careerReason">Please wait while we load your personalized recommendation.</p>
+
+          <div class="salary-badge" id="salaryRange">₹ -- LPA</div>
+
+          <br><br>
+
+          <h3>🛠 Required Technical Skills</h3>
+          <ul id="techSkills"></ul>
+
+          <br>
+
+          <h3>🤝 Soft Skills</h3>
+          <ul id="softSkills"></ul>
+
+          <br>
+
+          <h3>⚡ Daily Responsibilities</h3>
+          <ul id="responsibilities"></ul>
+
+          <br>
+
+          <h3>⚠ Real-World Challenges</h3>
+          <ul id="challenges"></ul>
+
+          <br>
+
+          <h3>🗺 Learning Roadmap</h3>
+          <ul id="roadmap"></ul>
+
+          <br>
+
+          <h3>🚀 Suggested Projects</h3>
+          <ul id="projects"></ul>
+
+          <br>
+
+          <h3>🏅 Certification Paths</h3>
+          <ul id="certifications"></ul>
+
+          <br>
+
+          <a href="courses.html" class="btn btn-primary">View Personalized Courses</a>
+        </div>
+
+        <!-- RIGHT SIDEBAR -->
+        <div class="glass-card">
+          <h3>📌 Career Progress Tracker</h3>
+          <br>
+          <p>Profile Completion</p>
+          <div class="progress-container">
+            <div class="progress-bar"></div>
+          </div>
+
+          <br>
+
+          <h3>🎯 Next Steps</h3>
+          <p>✔ Start recommended roadmap</p>
+          <p>✔ Complete beginner course</p>
+          <p>✔ Build projects</p>
+          <p>✔ Prepare for internships</p>
+
+          <br>
+
+          <h3>🌍 Career Paths Available</h3>
+          <p>• Placements</p>
+          <p>• Freelancing</p>
+          <p>• Startup</p>
+          <p>• Government Tech</p>
+          <p>• Higher Studies</p>
+
+          <br>
+
+          <button class="btn btn-secondary" onclick="downloadReport()">Download Career Report</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>CareerPath CSE</h3>
+        <p>Your personalized AI-powered CSE growth dashboard.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <a href="quiz.html">Retake Quiz</a>
+        <a href="courses.html">Courses</a>
+        <a href="books.html">Books</a>
+      </div>
+
+      <div>
+        <h3>Resources</h3>
+        <a href="#">Placement Prep</a>
+        <a href="#">Scholarships</a>
+        <a href="#">Mentor Booking</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 CareerPath CSE | Build Your Future</p>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT ENGINE ================= -->
+  <script>
+    const user = JSON.parse(localStorage.getItem("careerPathUser"));
+
+    const careerData = {
+      "Software Developer": {
+        reason: "You have strong coding interest and problem-solving ability, making you ideal for software engineering.",
+        salary: "₹6–25 LPA",
+        tech: ["DSA", "Web Development", "Java/Python", "Git/GitHub", "System Design"],
+        soft: ["Teamwork", "Communication", "Logical Thinking"],
+        responsibilities: ["Develop apps", "Fix bugs", "Write scalable code", "Collaborate with teams"],
+        challenges: ["Deadlines", "Continuous learning", "Debugging pressure"],
+        roadmap: ["Programming Basics", "DSA", "Projects", "Internships", "Placements"],
+        projects: ["Portfolio Website", "Chat App", "E-commerce Platform"],
+        certs: ["Meta Frontend", "AWS Cloud Practitioner", "Google IT Automation"]
+      },
+
+      "AI/ML Engineer": {
+        reason: "Your AI interest and coding strength align with machine learning and intelligent systems.",
+        salary: "₹8–35 LPA",
+        tech: ["Python", "Machine Learning", "Deep Learning", "TensorFlow", "Data Science"],
+        soft: ["Research", "Analytical Thinking", "Innovation"],
+        responsibilities: ["Train models", "Analyze data", "Deploy AI systems"],
+        challenges: ["Math-heavy", "Fast-evolving tools", "Model accuracy pressure"],
+        roadmap: ["Python", "Math", "ML", "Deep Learning", "Deployment"],
+        projects: ["Chatbot", "Image Classifier", "Recommendation System"],
+        certs: ["Andrew Ng ML", "Google AI", "IBM Data Science"]
+      },
+
+      "Cybersecurity Engineer": {
+        reason: "Your security interest and technical mindset fit cybersecurity and digital defense.",
+        salary: "₹7–30 LPA",
+        tech: ["Networking", "Ethical Hacking", "Linux", "PenTesting", "Cloud Security"],
+        soft: ["Attention to Detail", "Critical Thinking"],
+        responsibilities: ["Secure systems", "Threat analysis", "Penetration testing"],
+        challenges: ["High responsibility", "Constant threats", "Pressure"],
+        roadmap: ["Networking", "Linux", "Security Basics", "CEH", "Real Labs"],
+        projects: ["Vulnerability Scanner", "Password Auditor"],
+        certs: ["CEH", "CompTIA Security+", "Cisco Security"]
+      },
+
+      "UI/UX Designer": {
+        reason: "Your design interest suggests strong potential in creating digital experiences.",
+        salary: "₹4–18 LPA",
+        tech: ["Figma", "Wireframing", "UX Research", "Prototyping"],
+        soft: ["Creativity", "Empathy", "Communication"],
+        responsibilities: ["Design interfaces", "User research", "Prototype apps"],
+        challenges: ["User expectations", "Frequent revisions"],
+        roadmap: ["Design Basics", "Figma", "Portfolio", "Freelancing"],
+        projects: ["App UI", "Dashboard Design"],
+        certs: ["Google UX Design", "Adobe XD"]
+      },
+
+      "Product Manager": {
+        reason: "Your communication and business-tech alignment fit strategic product leadership.",
+        salary: "₹10–40 LPA",
+        tech: ["Product Strategy", "Analytics", "Agile", "Market Research"],
+        soft: ["Leadership", "Communication", "Decision-making"],
+        responsibilities: ["Roadmaps", "Stakeholder management", "Growth strategy"],
+        challenges: ["Pressure", "Cross-team conflict"],
+        roadmap: ["Tech Basics", "Business", "Product Strategy"],
+        projects: ["Case Studies", "Product Analysis"],
+        certs: ["Google PM", "Scrum Master"]
+      },
+
+      "Data Analyst": {
+        reason: "Your medium coding + data preference suits analytics and insights generation.",
+        salary: "₹5–20 LPA",
+        tech: ["Excel", "SQL", "Python", "Power BI", "Statistics"],
+        soft: ["Interpretation", "Presentation"],
+        responsibilities: ["Data cleaning", "Dashboards", "Business insights"],
+        challenges: ["Data inconsistency", "Deadlines"],
+        roadmap: ["Excel", "SQL", "Visualization", "Projects"],
+        projects: ["Sales Dashboard", "Market Trends Analysis"],
+        certs: ["Google Data Analytics", "Microsoft Power BI"]
+      }
+    };
+
+    function determineCareer(user) {
+      if (user.coding === "High" && user.interest === "Programming") return "Software Developer";
+      if (user.coding === "High" && user.interest === "AI") return "AI/ML Engineer";
+      if (user.coding === "High" && user.interest === "Security") return "Cybersecurity Engineer";
+      if (user.coding === "Low" && user.interest === "Design") return "UI/UX Designer";
+      if (user.interest === "Business") return "Product Manager";
+      if (user.coding === "Medium" && user.interest === "Data") return "Data Analyst";
+      return "Software Developer";
+    }
+
+    const recommendedCareer = user ? determineCareer(user) : "Software Developer";
+
+    if (user) {
+      localStorage.setItem("recommendedCareer", recommendedCareer);
+    }
+
+    const career = careerData[recommendedCareer];
+    const titleEl = document.getElementById("careerTitle");
+    const reasonEl = document.getElementById("careerReason");
+    const salaryEl = document.getElementById("salaryRange");
+    const techEl = document.getElementById("techSkills");
+    const softEl = document.getElementById("softSkills");
+    const respEl = document.getElementById("responsibilities");
+    const challengeEl = document.getElementById("challenges");
+    const roadmapEl = document.getElementById("roadmap");
+    const projectEl = document.getElementById("projects");
+    const certEl = document.getElementById("certifications");
+
+    function renderList(element, items) {
+      if (!element) return;
+      element.innerHTML = items.map(item => `<li>${item}</li>`).join("");
+    }
+
+    if (!user) {
+      titleEl.innerText = "Career Quiz Needed";
+      reasonEl.innerText = "Please take the Career Quiz to receive your personalized recommendation.";
+      salaryEl.innerText = "₹ -- LPA";
+      renderList(techEl, ["Visit the Quiz page to get started."]);
+      renderList(softEl, ["Quiz data not available."]);
+      renderList(respEl, ["Complete the quiz to unlock responsibilities."]);
+      renderList(challengeEl, ["No recommendation without quiz data."]);
+      renderList(roadmapEl, ["Take the quiz first."]);
+      renderList(projectEl, ["Build your profile."]);
+      renderList(certEl, ["Complete the quiz for certification suggestions."]);
+    } else {
+      titleEl.innerText = recommendedCareer;
+      reasonEl.innerText = career.reason;
+      salaryEl.innerText = career.salary;
+      renderList(techEl, career.tech);
+      renderList(softEl, career.soft);
+      renderList(respEl, career.responsibilities);
+      renderList(challengeEl, career.challenges);
+      renderList(roadmapEl, career.roadmap);
+      renderList(projectEl, career.projects);
+      renderList(certEl, career.certs);
+    }
+  </script>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

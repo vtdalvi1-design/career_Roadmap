@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareerPath CSE | AI-Powered Career Ecosystem</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">CareerPath CSE</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="quiz.html">Career Quiz</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="internships.html">Internships</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text fade-in">
+        <h1>Find Your Perfect <span>CSE Career Path</span></h1>
+        <p>
+          AI-Powered Career Recommendation + Learning Ecosystem designed exclusively
+          for Computer Science Engineering students. Discover careers, roadmap,
+          certifications, internships, placements, books, and opportunities — all in one place.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="quiz.html" class="btn btn-primary">Take Career Quiz</a>
+          <a href="careers.html" class="btn btn-secondary">Explore Careers</a>
+        </div>
+      </div>
+
+      <div class="glass-card fade-in">
+        <h3>🚀 Why CareerPath CSE?</h3>
+        <p>Personalized recommendations for Indian + Global CSE careers.</p>
+        <br>
+        <p>✔ AI/ML, Web Dev, Cybersecurity, Cloud, Product</p>
+        <p>✔ Salary in INR/LPA</p>
+        <p>✔ Books + Courses + Placement Prep</p>
+        <p>✔ Internship + Open Source Opportunities</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CAREER CATEGORIES ================= -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Top <span>CSE Career Tracks</span></h2>
+
+      <div class="career-grid">
+        <div class="glass-card">
+          <div class="card-icon">💻</div>
+          <h3>Software Developer</h3>
+          <p>Build web apps, mobile apps, backend systems, and enterprise solutions.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-icon">📊</div>
+          <h3>Data Scientist</h3>
+          <p>Analyze data, predictive modeling, business intelligence, and analytics.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-icon">🤖</div>
+          <h3>AI/ML Engineer</h3>
+          <p>Create intelligent systems using machine learning, NLP, and deep learning.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-icon">🔐</div>
+          <h3>Cybersecurity Engineer</h3>
+          <p>Protect networks, systems, and digital assets from cyber threats.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-icon">🎨</div>
+          <h3>UI/UX Designer</h3>
+          <p>Design intuitive interfaces, user journeys, and digital experiences.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-icon">☁️</div>
+          <h3>Cloud Engineer</h3>
+          <p>Manage cloud infrastructure, DevOps pipelines, and scalable deployment.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-icon">📈</div>
+          <h3>Product Manager</h3>
+          <p>Lead product strategy, roadmap, communication, and business growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Your Complete <span>Career Ecosystem</span></h2>
+
+      <div class="career-grid">
+        <div class="glass-card">
+          <h3>🧠 AI Career Quiz</h3>
+          <p>Smart recommendation engine based on skills, interests, and goals.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>📚 Personalized Courses</h3>
+          <p>Roadmaps from beginner to advanced with free + paid resources.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>📖 Book Store</h3>
+          <p>Recommended books for placements, skills, and specialization.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>🏆 Internship Hub</h3>
+          <p>Hackathons, coding contests, internships, and job-ready resources.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>🎯 Placement Prep</h3>
+          <p>DSA, aptitude, resume templates, GitHub tips, LinkedIn growth.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>🌍 India + Global</h3>
+          <p>Career guidance for startups, freelancing, MNCs, and government paths.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ROADMAP PREVIEW ================= -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Career <span>Roadmap Preview</span></h2>
+
+      <div class="glass-card">
+        <h3>Example: Software Developer Journey</h3>
+        <br>
+        <p>1️⃣ Learn Programming (C/C++/Python)</p>
+        <p>2️⃣ Master DSA + Problem Solving</p>
+        <p>3️⃣ Web Development / App Development</p>
+        <p>4️⃣ Git & GitHub + Projects</p>
+        <p>5️⃣ Internship + Open Source</p>
+        <p>6️⃣ Placement / Freelancing / Startup</p>
+
+        <br>
+
+        <div class="progress-container">
+          <div class="progress-bar"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Student <span>Success Stories</span></h2>
+
+      <div class="career-grid">
+        <div class="glass-card testimonial">
+          <h3>Rahul, Pune</h3>
+          <p>“I was confused between AI and Web Dev. CareerPath helped me choose Software Development with clarity.”</p>
+        </div>
+
+        <div class="glass-card testimonial">
+          <h3>Sneha, Mumbai</h3>
+          <p>“The roadmap + books + internships section made my placement prep structured.”</p>
+        </div>
+
+        <div class="glass-card testimonial">
+          <h3>Aryan, Bangalore</h3>
+          <p>“This feels like LinkedIn + Coursera + Career Counselor combined for CSE students.”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="glass-card" style="text-align:center;">
+        <h2>Ready to Build Your Tech Future?</h2>
+        <br>
+        <p>Take the AI-powered quiz and unlock your personalized CSE roadmap.</p>
+        <br>
+        <a href="quiz.html" class="btn btn-primary">Start Career Quiz</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>CareerPath CSE</h3>
+        <p>Your one-stop AI-powered ecosystem for CSE career success.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <a href="quiz.html">Career Quiz</a>
+        <a href="courses.html">Courses</a>
+        <a href="books.html">Books</a>
+        <a href="internships.html">Internships</a>
+      </div>
+
+      <div>
+        <h3>Resources</h3>
+        <a href="#">Scholarships</a>
+        <a href="#">Mentorship</a>
+        <a href="#">Placement Prep</a>
+        <a href="#">Recruiter Partnerships</a>
+      </div>
+
+      <div>
+        <h3>Future Features</h3>
+        <a href="#">AI Chatbot</a>
+        <a href="#">Mentor Booking</a>
+        <a href="#">Career Comparison Tool</a>
+        <a href="#">Career Reports</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 CareerPath CSE | Built for CSE Students of India 🇮🇳</p>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

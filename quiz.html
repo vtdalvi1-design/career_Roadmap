@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Quiz | CareerPath CSE</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">CareerPath CSE</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="internships.html">Internships</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    </div>
+  </nav>
+
+  <!-- ================= QUIZ SECTION ================= -->
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">Tell Us About Your <span>CSE Journey</span></h1>
+
+      <form id="careerQuizForm" class="glass-card quiz-form">
+
+        <!-- Name -->
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="Enter your full name" required>
+        </div>
+
+        <!-- Interest -->
+        <div class="form-group">
+          <label for="interest">Primary Interest Area</label>
+          <select id="interest" required>
+            <option value="">Select your interest</option>
+            <option value="Programming">Programming</option>
+            <option value="AI">Artificial Intelligence / ML</option>
+            <option value="Security">Cybersecurity</option>
+            <option value="Design">UI/UX Design</option>
+            <option value="Business">Business Tech / Product</option>
+            <option value="Data">Data Analytics</option>
+            <option value="Cloud">Cloud / DevOps</option>
+          </select>
+        </div>
+
+        <!-- Coding -->
+        <div class="form-group">
+          <label for="coding">Coding Skill Level</label>
+          <select id="coding" required>
+            <option value="">Select skill level</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+
+        <!-- Problem Solving -->
+        <div class="form-group">
+          <label for="problemSolving">Problem-Solving Level</label>
+          <select id="problemSolving" required>
+            <option value="">Select level</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+
+        <!-- Salary -->
+        <div class="form-group">
+          <label for="salary">Salary Expectation</label>
+          <select id="salary" required>
+            <option value="">Select expectation</option>
+            <option value="5-8">₹5–8 LPA</option>
+            <option value="8-15">₹8–15 LPA</option>
+            <option value="15+">₹15+ LPA</option>
+          </select>
+        </div>
+
+        <!-- Favorite Subject -->
+        <div class="form-group">
+          <label for="subject">Favorite Subject</label>
+          <select id="subject" required>
+            <option value="">Choose subject</option>
+            <option value="DSA">Data Structures</option>
+            <option value="AI">Artificial Intelligence</option>
+            <option value="Networks">Computer Networks</option>
+            <option value="Design">Design Thinking</option>
+            <option value="Management">Project Management</option>
+            <option value="Database">DBMS</option>
+            <option value="Cloud">Cloud Computing</option>
+          </select>
+        </div>
+
+        <!-- Hobbies -->
+        <div class="form-group">
+          <label for="hobbies">Hobbies / Activities</label>
+          <input type="text" id="hobbies" placeholder="Gaming, Designing, Blogging, Building Apps..." required>
+        </div>
+
+        <!-- Work Style -->
+        <div class="form-group">
+          <label for="workStyle">Preferred Work Style</label>
+          <select id="workStyle" required>
+            <option value="">Choose work style</option>
+            <option value="Remote">Remote</option>
+            <option value="Office">Office</option>
+            <option value="Hybrid">Hybrid</option>
+            <option value="Freelance">Freelance</option>
+          </select>
+        </div>
+
+        <!-- Location -->
+        <div class="form-group">
+          <label for="location">Preferred Career Location</label>
+          <select id="location" required>
+            <option value="">Choose location</option>
+            <option value="India">India</option>
+            <option value="Abroad">Abroad</option>
+            <option value="Startup">Startup Ecosystem</option>
+            <option value="Government">Government Tech Jobs</option>
+          </select>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-primary">Analyze My Future in Tech 🚀</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>CareerPath CSE</h3>
+        <p>AI-Powered Career Recommendation for Computer Science students.</p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <a href="careers.html">Careers</a>
+        <a href="courses.html">Courses</a>
+        <a href="books.html">Books</a>
+      </div>
+
+      <div>
+        <h3>Support</h3>
+        <a href="contact.html">Contact</a>
+        <a href="#">FAQ</a>
+        <a href="#">Newsletter</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 CareerPath CSE | Your AI Career Partner</p>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPT ================= -->
+  <script>
+    function determineCareer(user) {
+      if (user.coding === "High" && user.interest === "Programming") return "Software Developer";
+      if (user.coding === "High" && user.interest === "AI") return "AI/ML Engineer";
+      if (user.coding === "High" && user.interest === "Security") return "Cybersecurity Engineer";
+      if (user.coding === "Low" && user.interest === "Design") return "UI/UX Designer";
+      if (user.interest === "Business") return "Product Manager";
+      if (user.coding === "Medium" && user.interest === "Data") return "Data Analyst";
+      return "Software Developer";
+    }
+
+    document.getElementById("careerQuizForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const userData = {
+        name: document.getElementById("name").value,
+        interest: document.getElementById("interest").value,
+        coding: document.getElementById("coding").value,
+        problemSolving: document.getElementById("problemSolving").value,
+        salary: document.getElementById("salary").value,
+        subject: document.getElementById("subject").value,
+        hobbies: document.getElementById("hobbies").value,
+        workStyle: document.getElementById("workStyle").value,
+        location: document.getElementById("location").value
+      };
+
+      const recommendedCareer = determineCareer(userData);
+      localStorage.setItem("careerPathUser", JSON.stringify(userData));
+      localStorage.setItem("recommendedCareer", recommendedCareer);
+
+      // Processing Screen
+      document.body.innerHTML = `
+        <div class="loader-screen">
+          <div class="loader"></div>
+          <h1>Analyzing Your Future in Tech...</h1>
+          <p>Our AI is finding the best CSE career path for you 🚀</p>
+        </div>
+      `;
+
+      setTimeout(() => {
+        window.location.href = "careers.html";
+      }, 3000);
+    });
+  </script>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalized Courses | CareerPath CSE</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">CareerPath CSE</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="careers.html">Career Dashboard</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="internships.html">Internships</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    </div>
+  </nav>
+
+  <!-- ================= HEADER ================= -->
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">Your Personalized <span>Learning Roadmap</span></h1>
+
+      <div class="search-bar">
+        <input type="text" id="courseSearch" placeholder="Search skills, certifications, platforms...">
+        <button onclick="searchCourses()">Search</button>
+      </div>
+
+      <div class="glass-card" style="text-align:center;">
+        <h2 id="careerHeading">Recommended Courses for Your Career Path</h2>
+        <p id="careerDescription">Beginner → Advanced roadmap with free + paid learning resources.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COURSES GRID ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="course-grid" id="coursesContainer">
+        <!-- Dynamic content loads here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXTRA RESOURCES ================= -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Bonus <span>Career Growth Resources</span></h2>
+
+      <div class="career-grid">
+        <div class="glass-card">
+          <h3>🎯 Placement Preparation</h3>
+          <p>DSA sheets, aptitude prep, interview questions, HR rounds, and coding patterns.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>🏆 Certifications</h3>
+          <p>Google, AWS, Microsoft, Coursera, NPTEL, Cisco, CEH, Scrum.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>🌍 Indian + Global Career Paths</h3>
+          <p>Startup, MNC, freelancing, government jobs, remote jobs, and MS abroad prep.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>🤝 Mentor Booking (Future)</h3>
+          <p>1:1 expert guidance from engineers, PMs, cybersecurity experts, and founders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>CareerPath CSE</h3>
+        <p>India’s AI-powered ecosystem for CSE career growth.</p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <a href="careers.html">Career Dashboard</a>
+        <a href="books.html">Book Store</a>
+        <a href="internships.html">Internships</a>
+      </div>
+
+      <div>
+        <h3>Resources</h3>
+        <a href="#">Scholarships</a>
+        <a href="#">Resume Templates</a>
+        <a href="#">Interview Prep</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 CareerPath CSE | Learn. Build. Get Hired.</p>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    const recommendedCareer = localStorage.getItem("recommendedCareer") || "Software Developer";
+
+    const courseData = {
+      "Software Developer": {
+        desc: "Master software engineering from coding basics to full-stack development and system design.",
+        courses: [
+          {
+            title: "DSA Mastery",
+            level: "Beginner → Advanced",
+            type: "Free + Paid",
+            platform: "Apna College / Striver / Coursera",
+            skills: "C++, Java, Problem Solving"
+          },
+          {
+            title: "Web Development Bootcamp",
+            level: "Beginner",
+            type: "Paid",
+            platform: "Udemy / Angela Yu",
+            skills: "HTML, CSS, JavaScript, React"
+          },
+          {
+            title: "Git & GitHub",
+            level: "Beginner",
+            type: "Free",
+            platform: "YouTube / GitHub Docs",
+            skills: "Version Control"
+          },
+          {
+            title: "System Design",
+            level: "Advanced",
+            type: "Paid",
+            platform: "Scaler / Educative",
+            skills: "Architecture, Scalability"
+          }
+        ]
+      },
+
+      "AI/ML Engineer": {
+        desc: "Build intelligent systems with ML, Python, deep learning, and deployment.",
+        courses: [
+          {
+            title: "Python for Data Science",
+            level: "Beginner",
+            type: "Free",
+            platform: "NPTEL / freeCodeCamp",
+            skills: "Python, NumPy, Pandas"
+          },
+          {
+            title: "Machine Learning by Andrew Ng",
+            level: "Intermediate",
+            type: "Free + Paid",
+            platform: "Coursera",
+            skills: "ML, Regression, Classification"
+          },
+          {
+            title: "Deep Learning Specialization",
+            level: "Advanced",
+            type: "Paid",
+            platform: "Coursera",
+            skills: "TensorFlow, CNN, NLP"
+          },
+          {
+            title: "AI Deployment",
+            level: "Advanced",
+            type: "Paid",
+            platform: "Udemy",
+            skills: "MLOps, Deployment"
+          }
+        ]
+      },
+
+      "Cybersecurity Engineer": {
+        desc: "Learn ethical hacking, security operations, and infrastructure defense.",
+        courses: [
+          {
+            title: "Networking Basics",
+            level: "Beginner",
+            type: "Free",
+            platform: "Cisco Networking Academy",
+            skills: "Networking"
+          },
+          {
+            title: "Ethical Hacking",
+            level: "Intermediate",
+            type: "Paid",
+            platform: "Udemy / CEH",
+            skills: "PenTesting"
+          },
+          {
+            title: "Linux Security",
+            level: "Intermediate",
+            type: "Free",
+            platform: "YouTube / TryHackMe",
+            skills: "Linux"
+          },
+          {
+            title: "Cloud Security",
+            level: "Advanced",
+            type: "Paid",
+            platform: "AWS / Azure",
+            skills: "Cloud Protection"
+          }
+        ]
+      },
+
+      "UI/UX Designer": {
+        desc: "Learn design principles, UX research, and interface building.",
+        courses: [
+          {
+            title: "Google UX Design",
+            level: "Beginner",
+            type: "Paid",
+            platform: "Coursera",
+            skills: "UX"
+          },
+          {
+            title: "Figma Essentials",
+            level: "Beginner",
+            type: "Free",
+            platform: "YouTube",
+            skills: "Figma"
+          },
+          {
+            title: "Design Systems",
+            level: "Advanced",
+            type: "Paid",
+            platform: "Udemy",
+            skills: "UI Systems"
+          }
+        ]
+      },
+
+      "Product Manager": {
+        desc: "Strategic product building for tech businesses.",
+        courses: [
+          {
+            title: "Product Management Basics",
+            level: "Beginner",
+            type: "Free",
+            platform: "Google PM",
+            skills: "Strategy"
+          },
+          {
+            title: "Agile & Scrum",
+            level: "Intermediate",
+            type: "Paid",
+            platform: "Scrum.org",
+            skills: "Execution"
+          }
+        ]
+      },
+
+      "Data Analyst": {
+        desc: "Transform raw data into business decisions.",
+        courses: [
+          {
+            title: "Excel + SQL",
+            level: "Beginner",
+            type: "Free",
+            platform: "YouTube",
+            skills: "Data Basics"
+          },
+          {
+            title: "Google Data Analytics",
+            level: "Intermediate",
+            type: "Paid",
+            platform: "Coursera",
+            skills: "Analytics"
+          },
+          {
+            title: "Power BI",
+            level: "Advanced",
+            type: "Paid",
+            platform: "Microsoft",
+            skills: "Visualization"
+          }
+        ]
+      }
+    };
+
+    const currentData = courseData[recommendedCareer];
+
+    document.getElementById("careerHeading").innerText = `Courses for ${recommendedCareer}`;
+    document.getElementById("careerDescription").innerText = currentData.desc;
+
+    const container = document.getElementById("coursesContainer");
+
+    function renderCourses(courseList) {
+      container.innerHTML = "";
+      courseList.forEach(course => {
+        container.innerHTML += `
+          <div class="glass-card course-card">
+            <h3>📘 ${course.title}</h3>
+            <p><strong>Level:</strong> ${course.level}</p>
+            <p><strong>Type:</strong> ${course.type}</p>
+            <p><strong>Platform:</strong> ${course.platform}</p>
+            <p><strong>Skills:</strong> ${course.skills}</p>
+            <br>
+            <button class="btn btn-primary">Explore Course</button>
+          </div>
+        `;
+      });
+    }
+
+    renderCourses(currentData.courses);
+
+    function searchCourses() {
+      const query = document.getElementById("courseSearch").value.toLowerCase();
+      const filtered = currentData.courses.filter(course =>
+        course.title.toLowerCase().includes(query) ||
+        course.skills.toLowerCase().includes(query) ||
+        course.platform.toLowerCase().includes(query)
+      );
+      renderCourses(filtered);
+    }
+  </script>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,470 @@
+/* =========================================================
+   CareerPath CSE - Premium EdTech UI
+   File: styles/style.css
+   Theme: Futuristic Glassmorphism + Dark/Light Mode
+========================================================= */
+
+/* ---------- ROOT VARIABLES ---------- */
+:root {
+  --bg-primary: #0b1020;
+  --bg-secondary: rgba(255, 255, 255, 0.08);
+  --bg-card: rgba(255, 255, 255, 0.12);
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --accent-blue: #4facfe;
+  --accent-purple: #8b5cf6;
+  --accent-neon: #00f5ff;
+  --border-glass: rgba(255, 255, 255, 0.18);
+  --shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  --gradient-main: linear-gradient(135deg, #4facfe, #8b5cf6);
+  --gradient-dark: linear-gradient(135deg, #0f172a, #1e1b4b);
+  --success: #22c55e;
+  --warning: #facc15;
+  --danger: #ef4444;
+}
+
+/* ---------- LIGHT MODE ---------- */
+body.light-mode {
+  --bg-primary: #f4f7fb;
+  --bg-secondary: rgba(255, 255, 255, 0.75);
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border-glass: rgba(255, 255, 255, 0.4);
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --gradient-dark: linear-gradient(135deg, #dbeafe, #ede9fe);
+}
+
+/* ---------- GLOBAL RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--gradient-dark);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* ---------- SCROLLBAR ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-main);
+  border-radius: 10px;
+}
+
+/* ---------- CONTAINER ---------- */
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(18px);
+  background: rgba(15, 23, 42, 0.65);
+  border-bottom: 1px solid var(--border-glass);
+  z-index: 999;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 5%;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent-neon);
+}
+
+.theme-toggle {
+  cursor: pointer;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50px;
+  background: var(--gradient-main);
+  color: white;
+  font-weight: 600;
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 5%;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-text h1 span {
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  padding: 14px 28px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: var(--gradient-main);
+  color: white;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--accent-neon);
+  color: var(--accent-neon);
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- GLASS CARD ---------- */
+.glass-card {
+  background: var(--bg-card);
+  border-radius: 24px;
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--shadow);
+  padding: 25px;
+  transition: 0.4s;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+}
+
+/* ---------- SECTION ---------- */
+.section {
+  padding: 90px 5%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.7rem;
+  margin-bottom: 50px;
+}
+
+.section-title span {
+  color: var(--accent-neon);
+}
+
+/* ---------- CAREER GRID ---------- */
+.career-grid,
+.course-grid,
+.book-grid,
+.internship-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 28px;
+}
+
+.card-icon {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+
+.glass-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+}
+
+.glass-card p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ---------- QUIZ FORM ---------- */
+.quiz-form {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  gap: 22px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border-glass);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  outline: none;
+}
+
+/* ---------- SEARCH BAR ---------- */
+.search-bar {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto 40px;
+  display: flex;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 15px;
+  border-radius: 14px 0 0 14px;
+  border: none;
+  outline: none;
+}
+
+.search-bar button {
+  padding: 15px 25px;
+  border: none;
+  background: var(--gradient-main);
+  color: white;
+  border-radius: 0 14px 14px 0;
+  cursor: pointer;
+}
+
+/* ---------- DASHBOARD ---------- */
+.dashboard {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+.salary-badge {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 50px;
+  background: var(--success);
+  color: white;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* ---------- PROGRESS BAR ---------- */
+.progress-container {
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  height: 14px;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 75%;
+  background: var(--gradient-main);
+}
+
+/* ---------- TESTIMONIALS ---------- */
+.testimonial {
+  text-align: center;
+  padding: 30px;
+}
+
+.testimonial img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background: rgba(15, 23, 42, 0.8);
+  padding: 50px 5%;
+  margin-top: 80px;
+  border-top: 1px solid var(--border-glass);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.footer h3 {
+  margin-bottom: 15px;
+}
+
+.footer a {
+  display: block;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--accent-neon);
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+/* ---------- LOADING SCREEN ---------- */
+.loader-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.loader {
+  width: 90px;
+  height: 90px;
+  border: 8px solid rgba(255,255,255,0.1);
+  border-top: 8px solid var(--accent-neon);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 25px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- ANIMATIONS ---------- */
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 992px) {
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

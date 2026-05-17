@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | CareerPath CSE</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">CareerPath CSE</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="quiz.html">Career Quiz</a></li>
+        <li><a href="careers.html">Career Dashboard</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="internships.html">Internships</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">Contact <span>CareerPath CSE</span></h1>
+
+      <div class="glass-card" style="text-align:center;">
+        <h2>Let’s Build India’s Strongest CSE Career Ecosystem 🚀</h2>
+        <p>
+          Have questions, feedback, partnership ideas, mentorship requests,
+          recruiter collaborations, or feature suggestions?
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT FORM ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="dashboard">
+
+        <!-- LEFT FORM -->
+        <div class="glass-card">
+          <h2>📩 Send Us a Message</h2>
+          <br>
+
+          <form id="contactForm" class="quiz-form">
+
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="role">You Are</label>
+              <select id="role" required>
+                <option value="">Select</option>
+                <option>Student</option>
+                <option>Mentor</option>
+                <option>Recruiter</option>
+                <option>College Partner</option>
+                <option>Startup Founder</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" required>
+                <option value="">Choose subject</option>
+                <option>Career Guidance</option>
+                <option>Mentorship</option>
+                <option>Recruiter Partnership</option>
+                <option>Feature Suggestion</option>
+                <option>Technical Support</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="6" placeholder="Write your message..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send Message 🚀</button>
+          </form>
+        </div>
+
+        <!-- RIGHT INFO -->
+        <div class="glass-card">
+          <h2>🌍 Connect With Us</h2>
+          <br>
+
+          <p><strong>Email:</strong> support@careerpathcse.com</p>
+          <p><strong>LinkedIn:</strong> CareerPath CSE</p>
+          <p><strong>GitHub:</strong> github.com/careerpathcse</p>
+          <p><strong>Location:</strong> India</p>
+
+          <br>
+
+          <h3>🤝 Collaboration Areas</h3>
+          <p>✔ Mentorship Programs</p>
+          <p>✔ Recruiter Partnerships</p>
+          <p>✔ Scholarships</p>
+          <p>✔ College Collaborations</p>
+          <p>✔ AI Career Expansion</p>
+
+          <br>
+
+          <h3>📬 Newsletter</h3>
+          <p>Get updates on internships, scholarships, placements, and CSE growth.</p>
+
+          <div class="form-group">
+            <input type="email" placeholder="Enter your email">
+          </div>
+
+          <button class="btn btn-secondary">Subscribe</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+
+      <div class="career-grid">
+        <div class="glass-card">
+          <h3>❓ Is CareerPath CSE only for CSE students?</h3>
+          <p>Yes, it is specifically designed for Computer Science & IT-focused careers.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>❓ Does it help with placements?</h3>
+          <p>Yes — roadmap, books, internships, resume, GitHub, and interview prep.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>❓ Is mentorship available?</h3>
+          <p>Mentor booking is planned as a premium future feature.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>❓ Will AI chatbot be added?</h3>
+          <p>Yes — future-ready AI mentor and recruiter assistant are planned.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="glass-card" style="text-align:center;">
+        <h2>Ready to Transform Your CSE Career?</h2>
+        <br>
+        <p>Take the AI quiz and start your roadmap today.</p>
+        <br>
+        <a href="quiz.html" class="btn btn-primary">Take Career Quiz</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>CareerPath CSE</h3>
+        <p>AI-powered growth ecosystem for India’s CSE students.</p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <a href="quiz.html">Career Quiz</a>
+        <a href="courses.html">Courses</a>
+        <a href="internships.html">Internships</a>
+      </div>
+
+      <div>
+        <h3>Support</h3>
+        <a href="#">FAQ</a>
+        <a href="#">Mentorship</a>
+        <a href="#">Recruiters</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 CareerPath CSE | Contact. Collaborate. Grow.</p>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      alert("Thank you for contacting CareerPath CSE! We’ll connect with you soon 🚀");
+
+      document.getElementById("contactForm").reset();
+    });
+  </script>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

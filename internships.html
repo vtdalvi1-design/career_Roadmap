@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareerPath CSE | Internships & Opportunities</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">CareerPath CSE</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="quiz.html">Career Quiz</a></li>
+        <li><a href="careers.html">Career Dashboard</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">Internships & <span>Career Opportunities</span></h1>
+
+      <div class="search-bar">
+        <input type="text" id="internshipSearch" placeholder="Search internships, hackathons, open-source, resume...">
+        <button onclick="searchOpportunities()">Search</button>
+      </div>
+
+      <div class="glass-card" style="text-align:center;">
+        <h2>Build Experience Before Graduation 🚀</h2>
+        <p>
+          Discover internships, coding contests, hackathons, open-source programs,
+          placement prep, resume templates, LinkedIn/GitHub branding, and scholarships.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERNSHIP PLATFORMS ================= -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Top <span>Internship Platforms</span></h2>
+
+      <div class="internship-grid" id="opportunitiesContainer">
+
+        <div class="glass-card opportunity-card">
+          <h3>💼 Internshala</h3>
+          <p>India’s leading internship platform for students.</p>
+          <p><strong>Best For:</strong> Beginners, startups, remote internships</p>
+          <button class="btn btn-primary">Explore</button>
+        </div>
+
+        <div class="glass-card opportunity-card">
+          <h3>🌍 LinkedIn Jobs</h3>
+          <p>Professional internships, global networking, recruiter visibility.</p>
+          <p><strong>Best For:</strong> Corporate + networking</p>
+          <button class="btn btn-primary">Explore</button>
+        </div>
+
+        <div class="glass-card opportunity-card">
+          <h3>💻 AngelList / Wellfound</h3>
+          <p>Startup internships, product roles, remote tech jobs.</p>
+          <p><strong>Best For:</strong> Startup ecosystem</p>
+          <button class="btn btn-primary">Explore</button>
+        </div>
+
+        <div class="glass-card opportunity-card">
+          <h3>🏢 Naukri / Indeed</h3>
+          <p>Entry-level placements, fresher jobs, and internships.</p>
+          <p><strong>Best For:</strong> Placements</p>
+          <button class="btn btn-primary">Explore</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HACKATHONS ================= -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Hackathons & <span>Coding Competitions</span></h2>
+
+      <div class="career-grid">
+        <div class="glass-card">
+          <h3>🏆 Smart India Hackathon</h3>
+          <p>Government-backed innovation competition for engineering students.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>⚔ CodeChef / Codeforces</h3>
+          <p>Competitive programming and interview-level problem solving.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>🧠 LeetCode Contests</h3>
+          <p>DSA mastery for placements and product companies.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>🌐 Kaggle</h3>
+          <p>AI/ML competitions, datasets, and real-world analytics projects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OPEN SOURCE ================= -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Open Source <span>Contribution Paths</span></h2>
+
+      <div class="career-grid">
+        <div class="glass-card">
+          <h3>🌟 GitHub</h3>
+          <p>Build your public profile with projects, commits, and collaboration.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>☀ Google Summer of Code</h3>
+          <p>Prestigious global open-source mentorship opportunity.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>🎯 GirlScript Summer of Code</h3>
+          <p>Indian open-source ecosystem for students.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>🛠 Hacktoberfest</h3>
+          <p>Contribute to real repositories and build credibility.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CAREER BOOSTERS ================= -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Career <span>Boosters</span></h2>
+
+      <div class="career-grid">
+        <div class="glass-card">
+          <h3>📄 Resume Templates</h3>
+          <p>ATS-friendly fresher resumes for software, data, AI, and cybersecurity roles.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>🔗 LinkedIn Branding</h3>
+          <p>Headline optimization, recruiter-ready profile, networking strategy.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>💻 GitHub Portfolio</h3>
+          <p>Showcase projects, deployment, and technical credibility.</p>
+        </div>
+
+        <div class="glass-card">
+          <h3>🎤 Interview Prep</h3>
+          <p>HR + Technical + System Design + Aptitude + Group Discussion prep.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FUTURE FEATURES ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="glass-card" style="text-align:center;">
+        <h2>Future Add-ons 🌟</h2>
+        <br>
+        <p>✔ Recruiter Partnerships</p>
+        <p>✔ Scholarship Opportunities</p>
+        <p>✔ Mentor Booking</p>
+        <p>✔ AI Resume Analyzer</p>
+        <p>✔ Placement Tracker</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>CareerPath CSE</h3>
+        <p>Your launchpad for internships, placements, and tech growth.</p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <a href="careers.html">Career Dashboard</a>
+        <a href="courses.html">Courses</a>
+        <a href="books.html">Books</a>
+      </div>
+
+      <div>
+        <h3>Resources</h3>
+        <a href="#">Scholarships</a>
+        <a href="#">Resume Builder</a>
+        <a href="#">Mentorship</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 CareerPath CSE | Learn. Compete. Get Hired.</p>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    function searchOpportunities() {
+      const query = document.getElementById("internshipSearch").value.toLowerCase();
+      const cards = document.querySelectorAll(".opportunity-card");
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+
+        if (text.includes(query)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
