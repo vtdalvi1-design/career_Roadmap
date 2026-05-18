@@ -18,6 +18,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="quiz.html">Quiz</a></li>
         <li><a href="careers.html">Career Dashboard</a></li>
+        <li><a href="courses.html">Courses</a></li>
         <li><a href="books.html">Books</a></li>
         <li><a href="internships.html">Internships</a></li>
         <li><a href="about.html">About</a></li>
@@ -122,28 +123,32 @@
             level: "Beginner → Advanced",
             type: "Free + Paid",
             platform: "Apna College / Striver / Coursera",
-            skills: "C++, Java, Problem Solving"
+            skills: "C++, Java, Problem Solving",
+            url: "https://www.codingninjas.com/codestudio"
           },
           {
             title: "Web Development Bootcamp",
             level: "Beginner",
             type: "Paid",
             platform: "Udemy / Angela Yu",
-            skills: "HTML, CSS, JavaScript, React"
+            skills: "HTML, CSS, JavaScript, React",
+            url: "https://www.udemy.com/course/the-web-developer-bootcamp/"
           },
           {
             title: "Git & GitHub",
             level: "Beginner",
             type: "Free",
             platform: "YouTube / GitHub Docs",
-            skills: "Version Control"
+            skills: "Version Control",
+            url: "https://docs.github.com/en/get-started"
           },
           {
             title: "System Design",
             level: "Advanced",
             type: "Paid",
             platform: "Scaler / Educative",
-            skills: "Architecture, Scalability"
+            skills: "Architecture, Scalability",
+            url: "https://www.educative.io/courses/grokking-the-system-design-interview"
           }
         ]
       },
@@ -156,28 +161,32 @@
             level: "Beginner",
             type: "Free",
             platform: "NPTEL / freeCodeCamp",
-            skills: "Python, NumPy, Pandas"
+            skills: "Python, NumPy, Pandas",
+            url: "https://www.coursera.org/learn/python-data-analysis"
           },
           {
             title: "Machine Learning by Andrew Ng",
             level: "Intermediate",
             type: "Free + Paid",
             platform: "Coursera",
-            skills: "ML, Regression, Classification"
+            skills: "ML, Regression, Classification",
+            url: "https://www.coursera.org/learn/machine-learning"
           },
           {
             title: "Deep Learning Specialization",
             level: "Advanced",
             type: "Paid",
             platform: "Coursera",
-            skills: "TensorFlow, CNN, NLP"
+            skills: "TensorFlow, CNN, NLP",
+            url: "https://www.coursera.org/specializations/deep-learning"
           },
           {
             title: "AI Deployment",
             level: "Advanced",
             type: "Paid",
             platform: "Udemy",
-            skills: "MLOps, Deployment"
+            skills: "MLOps, Deployment",
+            url: "https://www.udemy.com/topic/mlops/"
           }
         ]
       },
@@ -190,28 +199,32 @@
             level: "Beginner",
             type: "Free",
             platform: "Cisco Networking Academy",
-            skills: "Networking"
+            skills: "Networking",
+            url: "https://www.netacad.com/courses/networking"
           },
           {
             title: "Ethical Hacking",
             level: "Intermediate",
             type: "Paid",
             platform: "Udemy / CEH",
-            skills: "PenTesting"
+            skills: "PenTesting",
+            url: "https://www.udemy.com/topic/ethical-hacking/"
           },
           {
             title: "Linux Security",
             level: "Intermediate",
             type: "Free",
             platform: "YouTube / TryHackMe",
-            skills: "Linux"
+            skills: "Linux",
+            url: "https://tryhackme.com/"
           },
           {
             title: "Cloud Security",
             level: "Advanced",
             type: "Paid",
             platform: "AWS / Azure",
-            skills: "Cloud Protection"
+            skills: "Cloud Protection",
+            url: "https://aws.amazon.com/training/"
           }
         ]
       },
@@ -224,21 +237,24 @@
             level: "Beginner",
             type: "Paid",
             platform: "Coursera",
-            skills: "UX"
+            skills: "UX",
+            url: "https://www.coursera.org/professional-certificates/google-ux-design"
           },
           {
             title: "Figma Essentials",
             level: "Beginner",
             type: "Free",
             platform: "YouTube",
-            skills: "Figma"
+            skills: "Figma",
+            url: "https://www.youtube.com/results?search_query=figma+essentials"
           },
           {
             title: "Design Systems",
             level: "Advanced",
             type: "Paid",
             platform: "Udemy",
-            skills: "UI Systems"
+            skills: "UI Systems",
+            url: "https://www.udemy.com/courses/search/?q=design+systems"
           }
         ]
       },
@@ -251,14 +267,16 @@
             level: "Beginner",
             type: "Free",
             platform: "Google PM",
-            skills: "Strategy"
+            skills: "Strategy",
+            url: "https://www.coursera.org/learn/product-management"
           },
           {
             title: "Agile & Scrum",
             level: "Intermediate",
             type: "Paid",
             platform: "Scrum.org",
-            skills: "Execution"
+            skills: "Execution",
+            url: "https://www.scrum.org/resources/scrum-guide"
           }
         ]
       },
@@ -271,35 +289,56 @@
             level: "Beginner",
             type: "Free",
             platform: "YouTube",
-            skills: "Data Basics"
+            skills: "Data Basics",
+            url: "https://www.youtube.com/results?search_query=excel+sql+tutorial"
           },
           {
             title: "Google Data Analytics",
             level: "Intermediate",
             type: "Paid",
             platform: "Coursera",
-            skills: "Analytics"
+            skills: "Analytics",
+            url: "https://www.coursera.org/professional-certificates/google-data-analytics"
           },
           {
             title: "Power BI",
             level: "Advanced",
             type: "Paid",
             platform: "Microsoft",
-            skills: "Visualization"
+            skills: "Visualization",
+            url: "https://learn.microsoft.com/en-us/training/powerplatform/power-bi"
           }
         ]
       }
     };
 
-    const currentData = courseData[recommendedCareer];
+    let currentData = courseData[recommendedCareer];
+    const effectiveCareer = currentData ? recommendedCareer : "Software Developer";
 
-    document.getElementById("careerHeading").innerText = `Courses for ${recommendedCareer}`;
-    document.getElementById("careerDescription").innerText = currentData.desc;
+    if (!currentData) {
+      currentData = courseData[effectiveCareer];
+      document.getElementById("careerDescription").innerText = "Showing default Software Developer roadmap because no career recommendation was found yet.";
+    } else {
+      document.getElementById("careerDescription").innerText = currentData.desc;
+    }
+
+    document.getElementById("careerHeading").innerText = `Courses for ${effectiveCareer}`;
 
     const container = document.getElementById("coursesContainer");
 
     function renderCourses(courseList) {
       container.innerHTML = "";
+
+      if (courseList.length === 0) {
+        container.innerHTML = `
+          <div class="glass-card" style="grid-column:1/-1;text-align:center;">
+            <h3>No matching courses found</h3>
+            <p>Try another search term or clear the search.</p>
+          </div>
+        `;
+        return;
+      }
+
       courseList.forEach(course => {
         container.innerHTML += `
           <div class="glass-card course-card">
@@ -309,7 +348,7 @@
             <p><strong>Platform:</strong> ${course.platform}</p>
             <p><strong>Skills:</strong> ${course.skills}</p>
             <br>
-            <button class="btn btn-primary">Explore Course</button>
+            <a href="${course.url || '#'}" target="_blank" rel="noopener" class="btn btn-primary">Explore Course</a>
           </div>
         `;
       });

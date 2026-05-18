@@ -132,28 +132,32 @@
           author: "Robert C. Martin",
           level: "Intermediate",
           price: "₹499",
-          category: "Coding Best Practices"
+          category: "Coding Best Practices",
+          image: "images/books/clean-code.svg"
         },
         {
           title: "Eloquent JavaScript",
           author: "Marijn Haverbeke",
           level: "Beginner",
           price: "₹399",
-          category: "Web Development"
+          category: "Web Development",
+          image: "images/books/eloquent-javascript.svg"
         },
         {
           title: "Cracking the Coding Interview",
           author: "Gayle Laakmann McDowell",
           level: "Advanced",
           price: "₹699",
-          category: "Placements"
+          category: "Placements",
+          image: "images/books/cracking-the-coding-interview.svg"
         },
         {
           title: "Designing Data-Intensive Applications",
           author: "Martin Kleppmann",
           level: "Advanced",
           price: "₹899",
-          category: "System Design"
+          category: "System Design",
+          image: "images/books/designing-data-intensive-applications.svg"
         }
       ],
 
@@ -163,21 +167,24 @@
           author: "Aurélien Géron",
           level: "Intermediate",
           price: "₹799",
-          category: "Machine Learning"
+          category: "Machine Learning",
+          image: "images/books/hands-on-machine-learning.svg"
         },
         {
           title: "Python Machine Learning",
           author: "Sebastian Raschka",
           level: "Advanced",
           price: "₹899",
-          category: "AI"
+          category: "AI",
+          image: "images/books/python-machine-learning.svg"
         },
         {
           title: "Deep Learning",
           author: "Ian Goodfellow",
           level: "Advanced",
           price: "₹999",
-          category: "Deep Learning"
+          category: "Deep Learning",
+          image: "images/books/deep-learning.svg"
         }
       ],
 
@@ -187,21 +194,24 @@
           author: "EC-Council",
           level: "Intermediate",
           price: "₹749",
-          category: "Cybersecurity"
+          category: "Cybersecurity",
+          image: "images/books/ceh-certified-ethical-hacker-guide.svg"
         },
         {
           title: "Web Application Hacker’s Handbook",
           author: "Dafydd Stuttard",
           level: "Advanced",
           price: "₹899",
-          category: "Ethical Hacking"
+          category: "Ethical Hacking",
+          image: "images/books/web-application-hackers-handbook.svg"
         },
         {
           title: "Linux Basics for Hackers",
           author: "OccupyTheWeb",
           level: "Beginner",
           price: "₹499",
-          category: "Linux Security"
+          category: "Linux Security",
+          image: "images/books/linux-basics-for-hackers.svg"
         }
       ],
 
@@ -211,14 +221,16 @@
           author: "Steve Krug",
           level: "Beginner",
           price: "₹399",
-          category: "UX"
+          category: "UX",
+          image: "images/books/dont-make-me-think.svg"
         },
         {
           title: "The Design of Everyday Things",
           author: "Don Norman",
           level: "Intermediate",
           price: "₹599",
-          category: "Design Thinking"
+          category: "Design Thinking",
+          image: "images/books/the-design-of-everyday-things.svg"
         }
       ],
 
@@ -228,14 +240,16 @@
           author: "Marty Cagan",
           level: "Intermediate",
           price: "₹699",
-          category: "Product"
+          category: "Product",
+          image: "images/books/inspired.svg"
         },
         {
           title: "Lean Startup",
           author: "Eric Ries",
           level: "Beginner",
           price: "₹499",
-          category: "Startup"
+          category: "Startup",
+          image: "images/books/lean-startup.svg"
         }
       ],
 
@@ -245,22 +259,25 @@
           author: "Cole Nussbaumer",
           level: "Beginner",
           price: "₹499",
-          category: "Analytics"
+          category: "Analytics",
+          image: "images/books/storytelling-with-data.svg"
         },
         {
           title: "Practical Statistics for Data Scientists",
           author: "Peter Bruce",
           level: "Advanced",
           price: "₹799",
-          category: "Data Science"
+          category: "Data Science",
+          image: "images/books/practical-statistics-for-data-scientists.svg"
         }
       ]
     };
 
-    let currentBooks = booksData[recommendedCareer];
+    let currentBooks = booksData[recommendedCareer] || booksData["Software Developer"];
+    const effectiveCareer = booksData[recommendedCareer] ? recommendedCareer : "Software Developer";
 
     document.getElementById("bookCareerHeading").innerText =
-      `Top Books for ${recommendedCareer}`;
+      `Top Books for ${effectiveCareer}`;
 
     const container = document.getElementById("booksContainer");
 
@@ -278,17 +295,26 @@
       }
 
       bookList.forEach(book => {
+        const buyLink = book.buyLink || `https://www.google.com/search?q=${encodeURIComponent(book.title)}`;
+
         container.innerHTML += `
-          <div class="glass-card">
-            <h3>📘 ${book.title}</h3>
-            <p><strong>Author:</strong> ${book.author}</p>
-            <p><strong>Level:</strong> ${book.level}</p>
-            <p><strong>Category:</strong> ${book.category}</p>
-            <p><strong>Price:</strong> ${book.price}</p>
-            <br>
-            <div class="hero-buttons">
-              <button class="btn btn-primary">Buy Now</button>
-              <button class="btn btn-secondary">Bookmark</button>
+          <div class="glass-card book-card">
+            <div class="book-cover">
+              <img src="${book.image || 'images/books/default-book.svg'}" alt="${book.title} cover">
+            </div>
+            <div class="book-info">
+              <h3>📘 ${book.title}</h3>
+              <p><strong>Author:</strong> ${book.author}</p>
+              <p><strong>Level:</strong> ${book.level}</p>
+              <div class="book-meta">
+                <span class="book-category">${book.category}</span>
+                <span class="book-price">${book.price}</span>
+              </div>
+              <br>
+              <div class="hero-buttons">
+                <a href="${buyLink}" target="_blank" rel="noopener" class="btn btn-primary">Buy Now</a>
+                <button type="button" onclick="addBookmark('${book.title.replace(/'/g, "\\'")}')" class="btn btn-secondary">Bookmark</button>
+              </div>
             </div>
           </div>
         `;

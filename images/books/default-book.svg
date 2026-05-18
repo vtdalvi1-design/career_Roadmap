@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420">
+  <rect width="300" height="420" rx="24" ry="24" fill="#0f172a"/>
+  <rect x="16" y="16" width="268" height="388" rx="18" ry="18" fill="#1f2937"/>
+  <text x="150" y="210" text-anchor="middle" fill="#94a3b8" font-size="20" font-weight="700">Book Cover</text>
+  <text x="150" y="250" text-anchor="middle" fill="#cbd5e1" font-size="14">Image Unavailable</text>
+</svg>
